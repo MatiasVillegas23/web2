@@ -7,6 +7,7 @@
     <li class="list-group-item">{$producto['nombre']}</li>
     <li class="list-group-item">{$producto['descripcion']}</li>
     <a href="borrarProducto/{$producto['id_producto']}"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span>Eliminar</a>
+    <a href="../indexAdmin"></span>Volver</a>
   </nav>
 </ul>
 {/foreach}
