@@ -32,15 +32,17 @@ class signinController
     $pass = $_POST["contraseña"];
     $dbUser = $this->model->GetUser($user);
 
-    if($dbUser!=null){
-      if (password_verify($pass, $dbUser[0]["contraseña"])){
-        //mostrar lista de tareas
-        session_start();
-        $_SESSION["nombre"] = $user;
-        header('Location: '.HOMEADMIN);
-      }else{
-        $this->view->mostrarLogin("Contraseña incorrecta");
-      }
+    if(isset($dbUser)){
+      //if ($user==($dbUser[0]["email"])) {
+        if(password_verify($pass, $dbUser[0]["contraseña"])){
+          //mostrar lista de tareas
+          session_start();
+          $_SESSION["nombre"] = $user;
+          header('Location: '.HOMEADMIN);
+        }else{
+          $this->view->mostrarLogin("Contraseña incorrecta");
+        }
+      //}
     }else{
       //No existe el usario
       header('Location: '.LOGIN);
