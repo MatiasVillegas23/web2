@@ -6,7 +6,7 @@
     <li><a href="/web2/formEditarProducto">Editar Producto</a></li>
     <li><a href="/web2/formAltaMarca">Crear Marca</a></li>
     <li><a href="/web2/formEditarMarca">Editar Marca</a></li>
-    <li><a href="logout">Cerra Sesion</a></li>
+    <li><a href="/web2/logout">Cerra Sesion</a></li>
   </ul>
   <form class="col-md-2 col-lg-2 form-inline"action="filtrarAdmin" method="POST">
     <select name="filtrarAdmin" class="form-control filter">

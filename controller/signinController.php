@@ -40,7 +40,7 @@ class signinController
           session_start();
           $_SESSION["nombre"] = $user;
           header('Location: '.HOMEADMIN);
-          print_r('todo bien');
+          //print_r('todo bien');
         }else{
           $this->view->mostrarLogin("pass incorrecta");
         }
