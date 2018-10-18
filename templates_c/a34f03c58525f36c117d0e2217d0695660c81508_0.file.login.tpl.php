@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 3.1.33, created on 2018-10-18 02:23:48
+/* Smarty version 3.1.33, created on 2018-10-18 05:19:37
   from 'C:\tudai\xampp\htdocs\web2\templates\Login\login.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5bc7d294abf835_13951840',
+  'unifunc' => 'content_5bc7fbc9ab5b84_75223371',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -23,7 +23,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_5bc7d294abf835_13951840 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5bc7fbc9ab5b84_75223371 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 $_smarty_tpl->_subTemplateRender("file:./loginNav.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>

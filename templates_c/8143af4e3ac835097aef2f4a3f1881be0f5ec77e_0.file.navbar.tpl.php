@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 3.1.33, created on 2018-10-18 02:23:47
+/* Smarty version 3.1.33, created on 2018-10-18 05:08:32
   from 'C:\tudai\xampp\htdocs\web2\templates\Store\navbar.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5bc7d2934be914_48633011',
+  'unifunc' => 'content_5bc7f930c6a343_97246634',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5bc7d2934be914_48633011 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5bc7f930c6a343_97246634 (Smarty_Internal_Template $_smarty_tpl) {
 ?><nav class="navbar navbar-expand-lg navbar-light bg-light">
   <ul class="nav navbar-nav">
     <li><a href="/web2/index">PAGINA PRINCIPAL</a></li>

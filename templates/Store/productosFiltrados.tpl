@@ -7,7 +7,7 @@
       <ul>
         <img src="{$producto['imagen']}" alt="{$producto['nombre']}">
       <nav class="col-md-6 col-lg-6">
-        <li class="list-group-item"><h3>{$producto['nombre']}</h3></li>
+        <li class="list-group-item"><h3>{$producto['nombre']} - ${$producto['precio']}</h3></li>
         <li class="list-group-item">{$producto['descripcion']}</li>
           </nav>
         </ul>
