@@ -29,18 +29,20 @@ class signinController
 
   function verificarLogin(){
     $user = $_POST["usuario"];
-    $pass = $_POST["contraseña"];
+    $pass = $_POST["pass"];
     $dbUser = $this->model->GetUser($user);
 
     if(isset($dbUser)){
+
       //if ($user==($dbUser[0]["email"])) {
-        if(password_verify($pass, $dbUser[0]["contraseña"])){
+        if(password_verify($pass, $dbUser[0]["pass"])){
           //mostrar lista de tareas
           session_start();
           $_SESSION["nombre"] = $user;
           header('Location: '.HOMEADMIN);
+          print_r('todo bien');
         }else{
-          $this->view->mostrarLogin("Contraseña incorrecta");
+          $this->view->mostrarLogin("pass incorrecta");
         }
       //}
     }else{

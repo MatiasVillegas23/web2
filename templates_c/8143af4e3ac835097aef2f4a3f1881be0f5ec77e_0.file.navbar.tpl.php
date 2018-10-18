@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.33, created on 2018-10-16 20:12:28
+/* Smarty version 3.1.33, created on 2018-10-18 02:23:47
   from 'C:\tudai\xampp\htdocs\web2\templates\Store\navbar.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5bc62a0c72c972_20319577',
+  'unifunc' => 'content_5bc7d2934be914_48633011',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '8143af4e3ac835097aef2f4a3f1881be0f5ec77e' => 
     array (
       0 => 'C:\\tudai\\xampp\\htdocs\\web2\\templates\\Store\\navbar.tpl',
-      1 => 1539671323,
+      1 => 1539822179,
       2 => 'file',
     ),
   ),
@@ -20,12 +20,12 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5bc62a0c72c972_20319577 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5bc7d2934be914_48633011 (Smarty_Internal_Template $_smarty_tpl) {
 ?><nav class="navbar navbar-expand-lg navbar-light bg-light">
   <ul class="nav navbar-nav">
-    <li><a href="index">PAGINA PRINCIPAL</a></li>
-    <li><a href="mostrarMarcas">MARCAS</a></li>
-    <li><a href="login">ADMINISTRACION</a></li>
+    <li><a href="/web2/index">PAGINA PRINCIPAL</a></li>
+    <li><a href="/web2/mostrarMarcas">MARCAS</a></li>
+    <li><a href="/web2/login">ADMINISTRACION</a></li>
   </ul>
   <form class="col-md-2 col-lg-2 form-inline"action="filtrar" method="POST">
     <select name="filtrar" class="form-control filter">

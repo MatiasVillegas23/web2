@@ -1,8 +1,8 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <ul class="nav navbar-nav">
-    <li><a href="index">PAGINA PRINCIPAL</a></li>
-    <li><a href="mostrarMarcas">MARCAS</a></li>
-    <li><a href="login">ADMINISTRACION</a></li>
+    <li><a href="/web2/index">PAGINA PRINCIPAL</a></li>
+    <li><a href="/web2/mostrarMarcas">MARCAS</a></li>
+    <li><a href="/web2/login">ADMINISTRACION</a></li>
   </ul>
   <form class="col-md-2 col-lg-2 form-inline"action="filtrar" method="POST">
     <select name="filtrar" class="form-control filter">

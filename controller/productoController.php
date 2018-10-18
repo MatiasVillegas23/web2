@@ -34,12 +34,9 @@ class productoController extends Controller
     $this->view->mostrarMarcas($this->titulo,$marcas);
   }
   public function detalleProducto($params){
-    $usuarios = $this->usersModel->getUsuarios();
-    $categorias=$this->Categoriasmodel->getCategorias();
     $id_producto = $params[0];
-    $imagenes = $this->Imagenmodel->getImagen($id_producto);
-    $productos =$this->productoModel->getProducto($id_producto);
-    $this->view->detalleProducto($productos,$usuarios,$categorias,$imagenes);
+    $producto =$this->model->GetProducto($id_producto);
+    $this->view->detalleProducto($producto[0]);
   }
 }
 ?>

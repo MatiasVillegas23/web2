@@ -25,7 +25,11 @@ class productoView
     $smarty->assign('marcas',$marcas);
     $smarty->display('templates/Store/marcas.tpl');
   }
-
+  function detalleProducto($producto) {
+    $smarty = new Smarty();
+    $smarty->assign('producto',$producto);
+    $smarty->display('templates/Store/detalle.tpl');
+  }
 }
 
  ?>

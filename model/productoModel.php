@@ -19,6 +19,7 @@ class productoModel extends Model
   function GetProducto($id_producto){
     $sentencia = $this->db->prepare( "select * from producto where id_producto=?");
     $sentencia->execute(array($id_producto));
+
     return $sentencia->fetchAll(PDO::FETCH_ASSOC);
   }
   function altaProducto($nombreProducto,$descripcion, $precio, $marca, $imagen){

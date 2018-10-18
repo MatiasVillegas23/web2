@@ -5,7 +5,7 @@ class ConfigApp{
   public static $ACTIONS = [
     '' => 'productoController#index',
     'index' => 'productoController#index',
-    'detalleProducto'=>'productoController#detalleProducto',
+    //'detalleProducto'=>'productoController#detalleProducto',
     'filtrar' => 'productoController#filtrarProductos',
     'mostrarMarcas' => 'productoController#mostrarMarcas',
     'login'=> 'signinController#login',
@@ -25,7 +25,7 @@ class ConfigApp{
     'formEditarMarca' => 'admController#formEditarMarca',
     'editarMarca' => 'admController#editarMarca',
     'filtrarAdmin' => 'admController#filtrarAdmin',
-
+    'detalleProducto' => 'productoController#detalleProducto'
 
   ];
 

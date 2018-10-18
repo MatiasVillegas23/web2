@@ -1,7 +1,7 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <ul class="nav navbar-nav">
-    <li><a href="indexAdmin">Home</a></li>
-    <li><a href="marcasAdmin">Marcas</a></li>
+    <li><a href="/web2/indexAdmin">Home</a></li>
+    <li><a href="/web2/marcasAdmin">Marcas</a></li>
     <li><a href="formAltaProducto">Crear Producto</a></li>
     <li><a href="formEditarProducto">Editar Producto</a></li>
     <li><a href="formAltaMarca">Crear Marca</a></li>

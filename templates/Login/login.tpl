@@ -9,7 +9,7 @@
         </div>
       <div class="form-group">
         <label for="exampleInputPassword1">Password</label>
-        <input type="password" class="form-control" name="contraseña" id="contraseña" placeholder="Contraseña">
+        <input type="password" class="form-control" name="pass" id="pass" placeholder="pass">
       </div>
         {$Message}
       <button type="submit" class="btn btn-primary">Login</button>

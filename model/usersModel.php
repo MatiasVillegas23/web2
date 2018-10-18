@@ -24,7 +24,7 @@ class usersModel
   }
 
   function InsertarUsuario($nombre, $pass){
-    $sentencia = $this->db->prepare("INSERT INTO usuario(email, contraseña) VALUES(?,?)");
+    $sentencia = $this->db->prepare("INSERT INTO usuario(email, pass) VALUES(?,?)");
     $sentencia->execute(array($nombre, $pass));
   }
 
