@@ -59,6 +59,7 @@ class admView
     $smarty->assign('marcas',$marcas);
     $smarty->assign('productos',$producto);
     $smarty->display('templates/Admin/detalleProducto.tpl');
+    $smarty->display('templates/Admin/css/style.css');
   }
 }
 

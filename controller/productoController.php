@@ -24,7 +24,7 @@ class productoController extends Controller
       $categoriaFiltrada = $_POST['filtrar'];
       $productos = $this->model->GetProductos();
       $marcas = $this->marcaModel->GetMarcas();
-      $this->view->productosFiltrados($this->titulo,$marcas,$productos,$categoriaFiltrada);
+      $this->view->productosFiltrados($this->titulo,$marcas);
     }else {
       header('Location: '.HOME);
     }

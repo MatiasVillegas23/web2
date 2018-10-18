@@ -1,6 +1,6 @@
 {include file="header.tpl"}
 {include file="./navbar.tpl"}
-<h2>Productos: </h2>
+<h2>PLACAS DE VIDEO: </h2>
 {foreach from=$productos item=producto}
 <ul class="producto">
 

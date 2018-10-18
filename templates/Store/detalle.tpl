@@ -1,4 +1,5 @@
 {include file="header.tpl"}
+{include file="fix.tpl"}
 {include file="./navbar.tpl"}
 
 
@@ -7,7 +8,7 @@
   <img src="../{$producto['imagen']}" alt="{$producto['nombre']}">
   <!-- {print_r($producto)} -->
   <nav class="col-md-6 col-lg-6">
-    <a href="producto/{$producto['id_producto']}" class="link"></a>
+    <a href="#" class="link"></a>
     <li class="list-group-item"><h3>{$producto['nombre']} - ${$producto['precio']}<h3></li>
     <li class="list-group-item">{$producto['descripcion']}</li>
   </nav>
