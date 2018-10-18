@@ -36,7 +36,8 @@ class productoController extends Controller
   public function detalleProducto($params){
     $id_producto = $params[0];
     $producto =$this->model->GetProducto($id_producto);
-    $this->view->detalleProducto($producto[0]);
+    $marca=$this->marcaModel->GetMarca($producto);
+    $this->view->detalleProducto($producto[0],$marca[0]);
   }
 }
 ?>

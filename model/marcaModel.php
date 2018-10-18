@@ -16,6 +16,13 @@ class marcaModel extends Model
     $sentencia->execute();
     return $sentencia->fetchAll(PDO::FETCH_ASSOC);
   }
+  function GetMarca($producto){
+    $id_marca =$producto[0]["id_marca"];
+    $sentencia = $this->db->prepare( "select * from marca where id_marca=?");
+    $sentencia->execute(array($id_marca));
+    return $sentencia->fetchAll(PDO::FETCH_ASSOC);
+
+  }
   function altaMarca($nombreMarca,$descripcion){
     $sentencia = $this->db->prepare("INSERT INTO marca(nombre, descripcion) VALUES(?,?)");
     $sentencia->execute(array($nombreMarca,$descripcion));
