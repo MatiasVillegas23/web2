@@ -1,6 +1,6 @@
 {include file="header.tpl"}
 {include file="fix.tpl"}
-{include file="./navbar.tpl"}
+{include file="./navbarDetail.tpl"}
 
 
 <ul class="producto">

@@ -1,5 +1,6 @@
 {include file="../header.tpl"}
-{include file="./navAdmin.tpl"}
+{include file="./navAdminDetail.tpl"}
+{include file="fix.tpl"}
 {foreach from=$productos item=producto}
 <ul>
     <img src="../{$producto['imagen']}" alt="{$producto['nombre']}">
