@@ -13,7 +13,7 @@
  *           or custom wrap/indent settings
  * Params:
  *
- * - style         - string (email)
+ * - style         - string (username)
  * - indent        - integer (0)
  * - wrap          - integer (80)
  * - wrap_char     - string ("\n")
@@ -75,7 +75,7 @@ function smarty_block_textformat($params, $content, Smarty_Internal_Template $te
                 trigger_error("textformat: unknown attribute '{$_key}'");
         }
     }
-    if ($style === 'email') {
+    if ($style === 'username') {
         $wrap = 72;
     }
     // split into paragraphs

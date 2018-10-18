@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.2
+-- version 4.8.3
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 18-10-2018 a las 01:36:48
--- Versión del servidor: 10.1.34-MariaDB
--- Versión de PHP: 7.1.20
+-- Tiempo de generación: 18-10-2018 a las 21:34:32
+-- Versión del servidor: 10.1.35-MariaDB
+-- Versión de PHP: 7.2.9
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -78,17 +78,16 @@ INSERT INTO `producto` (`id_producto`, `nombre`, `descripcion`, `precio`, `id_ma
 
 CREATE TABLE `usuario` (
   `id_usuario` int(11) NOT NULL,
-  `email` varchar(50) COLLATE utf8_spanish_ci NOT NULL,
-  `pass` char(250) COLLATE utf8_spanish_ci NOT NULL,
-  `isAdmin` bit(1) NOT NULL
+  `username` varchar(50) COLLATE utf8_spanish_ci NOT NULL,
+  `pass` char(250) COLLATE utf8_spanish_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 --
 -- Volcado de datos para la tabla `usuario`
 --
 
-INSERT INTO `usuario` (`id_usuario`, `email`, `pass`, `isAdmin`) VALUES
-(1, 'admin', '$2y$10$XSTd8EtXu5SeLqTrar5u3..hqxqz2bXipAK1EulyxAc26jHkuAZwy', b'1');
+INSERT INTO `usuario` (`id_usuario`, `username`, `pass`) VALUES
+(1, 'admin', '$2y$10$XSTd8EtXu5SeLqTrar5u3..hqxqz2bXipAK1EulyxAc26jHkuAZwy');
 
 --
 -- Índices para tablas volcadas

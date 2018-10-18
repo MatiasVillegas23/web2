@@ -24,12 +24,12 @@ class usersModel
   }
 
   function InsertarUsuario($nombre, $pass){
-    $sentencia = $this->db->prepare("INSERT INTO usuario(email, pass) VALUES(?,?)");
+    $sentencia = $this->db->prepare("INSERT INTO usuario(username, pass) VALUES(?,?)");
     $sentencia->execute(array($nombre, $pass));
   }
 
   function GetUser($user){
-    $sentencia = $this->db->prepare( "select * from usuario where email=? limit 1");
+    $sentencia = $this->db->prepare( "select * from usuario where username=? limit 1");
     $sentencia->execute(array($user));
     return $sentencia->fetchAll(PDO::FETCH_ASSOC);
   }

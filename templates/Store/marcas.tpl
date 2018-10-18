@@ -5,7 +5,7 @@
 <ul class="producto">
   <img src="{$marca['imagen']}" alt="{$marca['nombre']}">
 <nav class="col-md-6 col-lg-6 inline">
-  <a href="detalleProducto/{$marca['id_marca']}" class="link"></a>
+  <a href="#" class="link"></a>
   <li class="list-group-item"><h3>{$marca['nombre']}<h3></li>
   <li class="list-group-item">{$marca['descripcion']}</li>
   </nav>
