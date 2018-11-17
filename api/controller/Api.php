@@ -1,7 +1,11 @@
 <?php
 
+  define('HOME','http://'.$_SERVER['SERVER_NAME'] . dirname($_SERVER['PHP_SELF']).'/api/index');
+  define('LOGIN','http://'.$_SERVER['SERVER_NAME'] . dirname($_SERVER['PHP_SELF']).'/api/login');
+  define('HOMEADMIN','http://'.$_SERVER['SERVER_NAME'] . dirname($_SERVER['PHP_SELF']).'/api/indexAdmin');
+  define('MARCASADMIN','http://'.$_SERVER['SERVER_NAME'] . dirname($_SERVER['PHP_SELF']).'/api/marcasAdmin');
+
 abstract class Api{
-  //protected $model;
 
   function __construct(){
 
@@ -17,6 +21,7 @@ abstract class Api{
      $status = array(
        200 => "OK",
        404 => "Not found",
+       300 => "Task Not found",
        500 => "Internal Server Error"
      );
      return ($status[$code])? $status[$code] : $status[500];

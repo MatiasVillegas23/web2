@@ -27,8 +27,13 @@ class productoModel extends Model
     $sentencia->execute(array($nombreProducto,$descripcion, $precio, $marca, $imagen));
   }
   function borrarProducto($id_producto){
-    $sentencia = $this->db->prepare( "delete from producto where id_producto=?");
-    $sentencia->execute(array($id_producto));
+    $tarea = $this->GetProducto($id_producto);
+    if (isset($tarea)) {
+      $sentencia = $this->db->prepare( "delete from producto where id_producto=?");
+      $sentencia->execute(array($id_producto));
+      return $tarea;
+    }
+
   }
   function editarProducto($nombre,$descripcion,$precio,$imagen,$id_producto,$id_marca){
     $sentencia = $this->db->prepare( "update producto set nombre = ?, descripcion = ?, precio = ?, id_marca = ?, imagen = ? where id_producto=?");
