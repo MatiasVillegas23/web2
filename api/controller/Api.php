@@ -7,7 +7,11 @@
 
 abstract class Api{
 
+  protected $data;
+
   function __construct(){
+
+    $this->data = file_get_contents("php://input");
 
   }
 
@@ -26,5 +30,10 @@ abstract class Api{
      );
      return ($status[$code])? $status[$code] : $status[500];
    }
+
+   function getJSONData(){
+     return json_decode($this->data);
+   }
+
 }
 ?>

@@ -25,6 +25,8 @@ class productoModel extends Model
   function altaProducto($nombreProducto,$descripcion, $precio, $marca, $imagen){
     $sentencia = $this->db->prepare("INSERT INTO producto(nombre, descripcion, precio, id_marca, imagen) VALUES(?,?,?,?,?)");
     $sentencia->execute(array($nombreProducto,$descripcion, $precio, $marca, $imagen));
+    $lastId = $this->db->lastInsertId();
+    return $this->GetProducto($lastId);
   }
   function borrarProducto($id_producto){
     $tarea = $this->GetProducto($id_producto);
@@ -38,6 +40,7 @@ class productoModel extends Model
   function editarProducto($nombre,$descripcion,$precio,$imagen,$id_producto,$id_marca){
     $sentencia = $this->db->prepare( "update producto set nombre = ?, descripcion = ?, precio = ?, id_marca = ?, imagen = ? where id_producto=?");
     $sentencia->execute(array($nombre,$descripcion,$precio,$imagen,$id_producto,$id_marca));
+    return $this->GetProducto($id_producto);
   }
 
 }
