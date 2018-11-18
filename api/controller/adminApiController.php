@@ -1,9 +1,9 @@
 <?php
 
-require_once "sessionApiController.php";
+require_once 'Api.php';
 require_once "./../model/productoModel.php";
 
-class adminApiController extends sessionApiController{
+class adminApiController extends Api{
 
 private $model;
 
