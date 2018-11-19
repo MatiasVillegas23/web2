@@ -13,6 +13,7 @@ class ConfigApp{
     'indexAdmin' => 'admController#index',
     'marcasAdmin' => 'admController#marcas',
     'borrarProducto' => 'admController#borrarProducto',
+    'borrarImagen' => 'admController#borrarImagen',
     'borrarMarca' => 'admController#borrarMarca',
     'crearProducto' => 'admController#crearProducto',
     'crearMarca' => 'admController#crearMarca',
