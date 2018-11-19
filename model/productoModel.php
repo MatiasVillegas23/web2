@@ -23,8 +23,9 @@ class productoModel extends Model
     return $sentencia->fetchAll(PDO::FETCH_ASSOC);
   }
   function altaProducto($nombreProducto,$descripcion, $precio, $marca, $imagen){
+    $pathImg = $this->subirImagen($imagen);
     $sentencia = $this->db->prepare("INSERT INTO producto(nombre, descripcion, precio, id_marca, imagen) VALUES(?,?,?,?,?)");
-    $sentencia->execute(array($nombreProducto,$descripcion, $precio, $marca, $imagen));
+    $sentencia->execute(array($nombreProducto,$descripcion, $precio, $marca, $pathImg));
     //$lastId = $this->db->lastInsertId();
     //return $this->GetProducto($lastId);
   }

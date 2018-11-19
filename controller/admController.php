@@ -39,15 +39,15 @@ class admController extends sessionController
 
 
 
-  function borrarImagen($params) {
-  $imagen = ".$params[0]."/".$params[1]."
+  /*function borrarImagen($params) {
+  $imagen = ".$params[0]."/".$params[1].";//$params[0]
   $this->productoModel->borrarImagen($imagen);
   header('Location: '.HOMEADMIN);
-}
+}*/
 
 
 
-  function crearProducto(){
+  /*function crearProducto(){
     $nombreProducto = $_POST["nombreProducto"];
     $descripcion = $_POST["descripcionProducto"];
     $precio = $_POST["precio"];
@@ -59,7 +59,22 @@ class admController extends sessionController
     }else{
       echo "error";
     }
-  }
+  }*/
+
+  function crearProducto(){
+     $nombreProducto = $_POST["nombreProducto"];
+     $descripcion = $_POST["descripcionProducto"];
+     $precio = $_POST["precio"];
+     $marca = $_POST["marca"];
+     //$imagen = $_FILES['adjunto']['type'] == "image/jpg" || $_FILES['adjunto']['type'] == "image/jpeg" || $_FILES['adjunto']['type'] == "image/png";
+    // if ($nombreProducto!="" && $descripcion!="" && $precio!="" && $marca!="" && $imagen!="") {
+       $this->productoModel->altaProducto($nombreProducto,$descripcion, $precio, $marca, $_FILES['adjunto']['tmp_name']);
+       header('Location: '.HOMEADMIN);
+  /*  }else{
+       echo "error";
+     }*/
+   }
+
   function crearMarca(){
     $nombreMarca = $_POST["nombreMarca"];
     $descripcion = $_POST["descripcionMarca"];
