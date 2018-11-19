@@ -34,6 +34,11 @@ class admController extends sessionController
     $this->marcaModel->borrarMarca($idMarca);
     header('Location: '.MARCASADMIN);
   }
+  function borrarImagen($params) {
+  $imagen = $params[0];
+  $this->productoModel->borrarImagen($imagen);
+  header('Location: '.HOMEADMIN);
+}
   function crearProducto(){
     $nombreProducto = $_POST["nombreProducto"];
     $descripcion = $_POST["descripcionProducto"];

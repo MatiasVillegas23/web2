@@ -41,6 +41,17 @@ class productoModel extends Model
     $sentencia->execute(array($nombre,$descripcion,$precio,$imagen,$id_producto,$id_marca));
     return $this->GetProducto($id_producto);
   }
+  
+  function borrarImagen($imagen){
+    $sentencia = $this->db->prepare( "delete from producto where imagen=?");
+    $sentencia->execute(array($imagen));
+    }
+
+private function subirImagen($imagen){
+    $destino_final = 'img/' . uniqid() . '.jpg';
+    move_uploaded_file($imagen);
+    return $destino_final;
+}
 
 }
 
