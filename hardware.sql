@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 18-11-2018 a las 23:46:08
+-- Tiempo de generación: 18-11-2018 a las 23:56:16
 -- Versión del servidor: 10.1.35-MariaDB
 -- Versión de PHP: 7.2.9
 
@@ -29,7 +29,7 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `comentario` (
-  `id_usuario` int(11) NOT NULL,
+  `id_producto` int(11) NOT NULL,
   `comentario` varchar(500) NOT NULL,
   `puntaje` int(5) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -109,7 +109,7 @@ INSERT INTO `usuario` (`id_usuario`, `username`, `pass`) VALUES
 -- Indices de la tabla `comentario`
 --
 ALTER TABLE `comentario`
-  ADD PRIMARY KEY (`id_usuario`);
+  ADD PRIMARY KEY (`id_producto`);
 
 --
 -- Indices de la tabla `marca`
@@ -160,7 +160,7 @@ ALTER TABLE `usuario`
 -- Filtros para la tabla `comentario`
 --
 ALTER TABLE `comentario`
-  ADD CONSTRAINT `comentario_ibfk_1` FOREIGN KEY (`id_usuario`) REFERENCES `usuario` (`id_usuario`);
+  ADD CONSTRAINT `comentario_ibfk_1` FOREIGN KEY (`id_producto`) REFERENCES `producto` (`id_producto`);
 
 --
 -- Filtros para la tabla `producto`

@@ -15,3 +15,5 @@
 </ul>
 
 {include file="footer.tpl"}
+
+<!-- agregar aca el div para mostar comentarios -->

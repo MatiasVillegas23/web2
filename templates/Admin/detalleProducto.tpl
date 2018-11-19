@@ -13,3 +13,5 @@
 </ul>
 {/foreach}
 {include file="footer.tpl"}
+
+<!-- agregar aca el div para mostrar los comentarios -->
