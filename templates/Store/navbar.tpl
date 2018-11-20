@@ -2,7 +2,7 @@
   <ul class="nav navbar-nav">
     <li><a href="/web2/index">PAGINA PRINCIPAL</a></li>
     <li><a href="/web2/mostrarMarcas">MARCAS</a></li>
-    <li><a href="/web2/login">ADMINISTRACION</a></li>
+    <li><a href="/web2/login">INGRESAR</a></li>
   </ul>
   <form class="col-md-2 col-lg-2 form-inline" action="filtrar" method="POST">
     <select name="filtrar" class="form-control filter">

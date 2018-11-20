@@ -7,6 +7,7 @@ class ConfigApp{
     'index' => 'productoController#index',
     'filtrar' => 'productoController#filtrarProductos',
     'mostrarMarcas' => 'productoController#mostrarMarcas',
+    'InsertUsuario' => 'usersController#InsertUsuario',
     'login'=> 'signinController#login',
     'verificarLogin' => 'signinController#verificarLogin',
     'logout' => 'signinController#logout',
@@ -25,7 +26,7 @@ class ConfigApp{
     'formEditarMarca' => 'admController#formEditarMarca',
     'editarMarca' => 'admController#editarMarca',
     'filtrarAdmin' => 'admController#filtrarAdmin',
-    'detalleProducto' => 'productoController#detalleProducto'
+    'detalleProducto' => 'productoController#detalleProducto',
 
   ];
 

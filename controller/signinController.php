@@ -34,19 +34,17 @@ class signinController
 
     if(isset($dbUser)){
 
-      //if ($user==($dbUser[0]["username"])) {
         if(!empty($dbUser)&&(password_verify($pass, $dbUser[0]["pass"]))){
-          //mostrar lista de tareas
           session_start();
           $_SESSION["nombre"] = $user;
           header('Location: '.HOMEADMIN);
-          //print_r('todo bien');
+
         }else{
           $this->view->mostrarLogin("Datos incorrectos, pruebe de nuevo");
         }
-      //}
+
     }else{
-      //No existe el usario
+
       header('Location: '.LOGIN);
       $this->view->mostrarLogin("No existe el usuario");
     }
