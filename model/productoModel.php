@@ -38,9 +38,10 @@ class productoModel extends Model
     //}
   }
   function editarProducto($nombre,$descripcion,$precio,$imagen,$id_producto,$id_marca){
+    $pathImg = $this->subirImagen($imagen);
     $sentencia = $this->db->prepare( "update producto set nombre = ?, descripcion = ?, precio = ?, id_marca = ?, imagen = ? where id_producto=?");
-    $sentencia->execute(array($nombre,$descripcion,$precio,$imagen,$id_producto,$id_marca));
-    return $this->GetProducto($id_producto);
+    $sentencia->execute(array($nombre,$descripcion,$precio,$pathImg,$id_producto,$id_marca));
+    //return $this->GetProducto($id_producto);
   }
 
   function borrarImagen($imagen){
@@ -50,7 +51,7 @@ class productoModel extends Model
 
 private function subirImagen($imagen){
     $destino_final = 'img/' . uniqid() . '.jpg';
-    move_uploaded_file($imagen);
+    move_uploaded_file($imagen,$destino_final);
     return $destino_final;
 }
 

@@ -15,7 +15,7 @@
         &nbsp;
         <a href="../indexAdmin"><span class="glyphicon glyphicon-repeat" aria-hidden="true"></span>Volver</a>
       </div>
-      <div class="col-lg-4"><img src="{$producto->imagen}"/></div>
+      <div class="col-lg-4"><img src="{$producto['imagen']}"/></div>
     </div>
 
 

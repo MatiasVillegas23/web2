@@ -35,10 +35,6 @@ class admController extends sessionController
     header('Location: '.MARCASADMIN);
   }
 
-
-
-
-
   /*function borrarImagen($params) {
   $imagen = ".$params[0]."/".$params[1].";//$params[0]
   $this->productoModel->borrarImagen($imagen);
@@ -118,13 +114,13 @@ class admController extends sessionController
     $descripcion = $_POST["descripcionProducto"];
     $precio = $_POST["precio"];
     $marca = $_POST["marca"];
-    $imagen = $_POST["imagen"];
-    if ($nombreProducto!="" && $descripcion!="" && $precio!="" && $marca!="" && $imagen!="" && $id_producto!="") {
-      $this->productoModel->editarProducto($nombreProducto,$descripcion, $precio, $marca, $imagen, $id_producto);
+    //$this->productoModel->editarProducto($nombreProducto,$descripcion, $precio, $marca, $_FILES['adjunto']['tmp_name']);
+    //if ($nombreProducto!="" && $descripcion!="" && $precio!="" && $marca!="" && $imagen!="" && $id_producto!="") {
+    $this->productoModel->editarProducto($nombreProducto,$descripcion, $precio, $_FILES['adjunto']['tmp_name'],$id_producto,$marca);
       header('Location: '.HOMEADMIN);
-    }else{
+/*  }else{
       echo "error";
-    }
+    }*/
   }
   function formEditarMarca(){
     $marcas = $this->marcaModel->GetMarcas();
