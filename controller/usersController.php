@@ -26,13 +26,12 @@ class usersController extends sessionController
 
 
   function InsertUsuario(){
-    $user = $_POST["usuario"];
+    $user = $_POST["nombre"];
     $pass = $_POST["pass"];
+    $hash = password_hash($pass, PASSWORD_DEFAULT);
+    $this->model->InsertarUsuario($user,$hash);
+    echo $user."\n";
 
-    $this->model->InsertarUsuario($user,$pass);
-    $hash = password_hash($pass, PASSWORD_DEFAULT)
-
-    header("Location: http://".$_SERVER["SERVER_NAME"] . dirname($_SERVER["PHP_SELF"]));
   }
 
 
