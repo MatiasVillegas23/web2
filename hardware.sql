@@ -1,13 +1,15 @@
 -- phpMyAdmin SQL Dump
--- version 4.6.5.2
+-- version 4.8.3
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 20-11-2018 a las 21:39:43
--- Versión del servidor: 10.1.21-MariaDB
--- Versión de PHP: 5.6.30
+-- Tiempo de generación: 21-11-2018 a las 03:43:05
+-- Versión del servidor: 10.1.35-MariaDB
+-- Versión de PHP: 7.2.9
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -99,15 +101,16 @@ INSERT INTO `producto` (`id_producto`, `nombre`, `descripcion`, `precio`, `id_ma
 CREATE TABLE `usuario` (
   `id_usuario` int(11) NOT NULL,
   `username` varchar(50) COLLATE utf8_spanish_ci NOT NULL,
-  `pass` char(250) COLLATE utf8_spanish_ci NOT NULL
+  `pass` char(250) COLLATE utf8_spanish_ci NOT NULL,
+  `isAdmin` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 --
 -- Volcado de datos para la tabla `usuario`
 --
 
-INSERT INTO `usuario` (`id_usuario`, `username`, `pass`) VALUES
-(1, 'admin', '$2y$10$XSTd8EtXu5SeLqTrar5u3..hqxqz2bXipAK1EulyxAc26jHkuAZwy');
+INSERT INTO `usuario` (`id_usuario`, `username`, `pass`, `isAdmin`) VALUES
+(1, 'admin', '$2y$10$XSTd8EtXu5SeLqTrar5u3..hqxqz2bXipAK1EulyxAc26jHkuAZwy', 1);
 
 --
 -- Índices para tablas volcadas
@@ -147,16 +150,19 @@ ALTER TABLE `usuario`
 --
 ALTER TABLE `marca`
   MODIFY `id_marca` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
 --
 -- AUTO_INCREMENT de la tabla `producto`
 --
 ALTER TABLE `producto`
   MODIFY `id_producto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+
 --
 -- AUTO_INCREMENT de la tabla `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
 --
 -- Restricciones para tablas volcadas
 --
@@ -166,6 +172,7 @@ ALTER TABLE `usuario`
 --
 ALTER TABLE `producto`
   ADD CONSTRAINT `producto_ibfk_1` FOREIGN KEY (`id_marca`) REFERENCES `marca` (`id_marca`) ON DELETE CASCADE ON UPDATE CASCADE;
+COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

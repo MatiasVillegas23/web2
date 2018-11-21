@@ -40,13 +40,15 @@ class productoModel extends Model
   function editarProducto($nombre,$descripcion,$precio,$imagen,$id_producto,$id_marca){
     $pathImg = $this->subirImagen($imagen);
     $sentencia = $this->db->prepare( "update producto set nombre = ?, descripcion = ?, precio = ?, id_marca = ?, imagen = ? where id_producto=?");
-    $sentencia->execute(array($nombre,$descripcion,$precio,$pathImg,$id_producto,$id_marca));
+    $sentencia->execute(array($nombre,$descripcion,$precio,$id_marca,$pathImg,$id_producto,));
     //return $this->GetProducto($id_producto);
   }
 
-  function borrarImagen($imagen){
-    $sentencia = $this->db->prepare( "delete from producto where imagen=?");
-    $sentencia->execute(array($imagen));
+  function borrarImagen($idProducto,$imagen){
+    unlink($imagen);// no anda y nose por que
+    $img = "img/sinImagen.jpg";
+    $sentencia = $this->db->prepare( "update producto set imagen = ? where id_producto=?");
+    $sentencia->execute(array($img,$idProducto));
     }
 
 private function subirImagen($imagen){

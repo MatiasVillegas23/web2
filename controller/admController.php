@@ -35,6 +35,13 @@ class admController extends sessionController
     header('Location: '.MARCASADMIN);
   }
 
+  function borrarImagen($params){
+    $idProducto = $params[2];
+    $img = $params[1];
+    $this->productoModel->borrarImagen($idProducto,$img);
+    header('Location: '.DETALLEADMIN.'/'.$idProducto);
+  }
+
   /*function borrarImagen($params) {
   $imagen = ".$params[0]."/".$params[1].";//$params[0]
   $this->productoModel->borrarImagen($imagen);
@@ -145,5 +152,6 @@ class admController extends sessionController
     $this->view->detalleProducto($this->titulo,$marcas,$producto);
   }
 }
+
 
 ?>

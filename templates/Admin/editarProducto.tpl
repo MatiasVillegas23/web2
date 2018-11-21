@@ -4,7 +4,7 @@
 <h1>{$titulo}</h1>
 <div class="container">
   <h2>Formulario</h2>
-  <form method="post" action="editarProducto">
+  <form method="post" action="editarProducto" enctype="multipart/form-data">
     <select name="id_producto" class="form-control filter">
       <option value="id_producto" selected disabled hidden>Filtrar por Producto</option>
       {foreach from=$productos item=producto}

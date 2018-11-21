@@ -6,6 +6,7 @@
  define('LOGIN','http://'.$_SERVER['SERVER_NAME'] . ":" . $_SERVER['SERVER_PORT'] . dirname($_SERVER['PHP_SELF']).'/login');
  define('HOMEADMIN','http://'.$_SERVER['SERVER_NAME'] . ":" . $_SERVER['SERVER_PORT'] . dirname($_SERVER['PHP_SELF']).'/indexAdmin');
  define('MARCASADMIN','http://'.$_SERVER['SERVER_NAME'] . ":" . $_SERVER['SERVER_PORT'] . dirname($_SERVER['PHP_SELF']).'/marcasAdmin');
+ define('DETALLEADMIN','http://'.$_SERVER['SERVER_NAME'] . ":" . $_SERVER['SERVER_PORT'] . dirname($_SERVER['PHP_SELF']).'/detalleProductoAdmin');
 
 class Controller
 {
