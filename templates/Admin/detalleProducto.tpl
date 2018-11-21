@@ -23,6 +23,9 @@
 
 
 {/foreach}
+  <div class="col-lg-8" id="comentarios-container">
+
+  </div>
 {include file="footer.tpl"}
 
 <!-- agregar aca el div para mostrar los comentarios -->

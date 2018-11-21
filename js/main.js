@@ -1,5 +1,4 @@
 'use strict'
-
 let templateComentarios;
 
 fetch('js/templates/detalleComentarios.handlebars')
