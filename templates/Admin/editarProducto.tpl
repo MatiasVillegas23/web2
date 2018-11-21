@@ -33,7 +33,7 @@
       </select>
     </div>
       <div class="form-group"> <label for="adjunto">Adjuntar imagen:</label>
-        <input type="file" name="adjunto" class="form-control-file" id="adjunto" accept="image/x-png,image/jpeg">
+        <input type="file" name="adjunto" class="form-control-file" id="adjunto" accept="image/x-png,image/jpeg" enctype="multipart/form-data">
         <br>
   <button type="submit" class="btn btn-primary">Editar Producto</button>
       </div>

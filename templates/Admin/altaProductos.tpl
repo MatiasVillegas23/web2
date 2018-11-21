@@ -3,7 +3,7 @@
     <h1>{$titulo}</h1>
     <div class="container">
       <h2>Formulario</h2>
-      <form method="post" action="crearProducto">
+      <form method="post" action="crearProducto"  enctype="multipart/form-data">
         <div class="form-group">
           <label for="nombreProducto">Nombre</label>
           <input type="text" class="form-control" id="nombreProducto" name="nombreProducto">
