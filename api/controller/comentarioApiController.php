@@ -1,7 +1,7 @@
 <?php
 
 require_once "Api.php";
-require_once "./../model/productoModel.php";
+require_once "./../model/comentariosModel.php";
 
 class productoApiController extends Api{
 
