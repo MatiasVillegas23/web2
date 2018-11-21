@@ -58,18 +58,19 @@ class admController extends sessionController
   }*/
 
   function crearProducto(){
-     $nombreProducto = $_POST["nombreProducto"];
-     $descripcion = $_POST["descripcionProducto"];
-     $precio = $_POST["precio"];
-     $marca = $_POST["marca"];
-     //$imagen = $_FILES['adjunto']['type'] == "image/jpg" || $_FILES['adjunto']['type'] == "image/jpeg" || $_FILES['adjunto']['type'] == "image/png";
-    // if ($nombreProducto!="" && $descripcion!="" && $precio!="" && $marca!="" && $imagen!="") {
-       $this->productoModel->altaProducto($nombreProducto,$descripcion, $precio, $marca, $_FILES['adjunto']['tmp_name']);
-       header('Location: '.HOMEADMIN);
-  /*  }else{
-       echo "error";
-     }*/
-   }
+       $nombreProducto = $_POST["nombreProducto"];
+       $descripcion = $_POST["descripcionProducto"];
+       $precio = $_POST["precio"];
+       $marca = $_POST["marca"];
+       $img = $_FILES['adjunto']['tmp_name'];
+       //$imagen = $_FILES['adjunto']['type'] == "image/jpg" || $_FILES['adjunto']['type'] == "image/jpeg" || $_FILES['adjunto']['type'] == "image/png";
+      // if ($nombreProducto!="" && $descripcion!="" && $precio!="" && $marca!="" && $imagen!="") {
+         $this->productoModel->altaProducto($nombreProducto,$descripcion, $precio, $marca, $img);
+         header('Location: '.HOMEADMIN);
+    /*  }else{
+         echo "error";
+       }*/
+     }
 
   function crearMarca(){
     $nombreMarca = $_POST["nombreMarca"];

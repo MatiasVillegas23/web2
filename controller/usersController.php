@@ -45,7 +45,7 @@ class usersController extends sessionController
 
             if (!empty($Usuario)) {
                 $this->message = "El usuario ya se encuentra registrado";
-                $this->view->mostrarLogin($this->message2);
+                $this->view->mostrarLogin($this->Message2);
             } else {
                 if (!empty($pass)) {
                     $hash      = password_hash($pass, PASSWORD_DEFAULT);
@@ -53,16 +53,16 @@ class usersController extends sessionController
                     $userRegistrado = $this->model->InsertarUsuario($user,$hash,$isAdmin);
                     if (isset($userRegistrado)) {
                         session_start();
-                        header('Location: '.HOME);
+                        header("Location: http://".$_SERVER["SERVER_NAME"] . dirname($_SERVER["PHP_SELF"]));
                     } else {
                         $this->message = "Error, intente nuevamente";
-                        $this->view->mostrarLogin($this->message2);
+                        $this->view->mostrarLogin($this->Message2);
                     }
                 }
             }
         } else {
             $this->message = "Datos faltantes";
-            $this->view->mostrarLogin($this->message2);
+            $this->view->mostrarLogin($this->Message2);
         }
     }
 }
