@@ -39,11 +39,13 @@ class signinController
           $_SESSION["nombre"] = $user;
           header('Location: '.HOMEADMIN);
 
-        }else{
+        }
+        else{
           $this->view->mostrarLogin("Datos incorrectos, pruebe de nuevo");
         }
 
-    }else{
+    }
+    else{
 
       header('Location: '.LOGIN);
       $this->view->mostrarLogin("No existe el usuario");
