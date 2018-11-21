@@ -2,7 +2,7 @@
 {include file="./navAdminDetail.tpl"}
 {include file="fix.tpl"}
 {foreach from=$productos item=producto}
-
+<form method="post" enctype="multipart/form-data">
   <div class="col-lg-10 col-lg-offset-1">
 
     <div class="row">
@@ -19,13 +19,22 @@
 
       <div class="col-lg-4"><img src="../{$producto['imagen']}"/></div>
 
+      <div class="row">
+        <br>
+        <div class="col-lg-offset-8 col-lg-4"> <label for="adjunto">Cambiar imagen:</label>
+          <input type="file" name="imagen" class="form-control-file" id="imagen" accept="image/x-png,image/jpeg">
+        <br>
+        <a href="../cambiarImagen/{$producto['imagen']}/{$producto['id_producto']}"><span class="glyphicon glyphicon-file" aria-hidden="true"></span>Cambiar Imagen</a>
+          <!-- <button type="submit" class="btn btn-primary">Aceptar</button></div>-->
+        </div>
+      </div>
     </div>
-
-
-{/foreach}
-  <div class="col-lg-8" id="comentarios-container">
-
   </div>
+</form>
+    <div class="col-lg-8" id="comentarios-container">
+
+    </div>
+{/foreach}
 {include file="footer.tpl"}
 
 <!-- agregar aca el div para mostrar los comentarios -->

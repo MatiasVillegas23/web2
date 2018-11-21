@@ -41,28 +41,13 @@ class admController extends sessionController
     $this->productoModel->borrarImagen($idProducto,$img);
     header('Location: '.DETALLEADMIN.'/'.$idProducto);
   }
-
-  /*function borrarImagen($params) {
-  $imagen = ".$params[0]."/".$params[1].";//$params[0]
-  $this->productoModel->borrarImagen($imagen);
-  header('Location: '.HOMEADMIN);
-}*/
-
-
-
-  /*function crearProducto(){
-    $nombreProducto = $_POST["nombreProducto"];
-    $descripcion = $_POST["descripcionProducto"];
-    $precio = $_POST["precio"];
-    $marca = $_POST["marca"];
-    $imagen = $_POST["imagen"];
-    if ($nombreProducto!="" && $descripcion!="" && $precio!="" && $marca!="" && $imagen!="") {
-      $this->productoModel->altaProducto($nombreProducto,$descripcion, $precio, $marca, $imagen);
-      header('Location: '.HOMEADMIN);
-    }else{
-      echo "error";
-    }
-  }*/
+  function cambiarImagen($params){
+    $idProducto = $params[2];
+    $img = $params[1];
+    $newImg = $_FILES['imagen']['tmp_name'];
+    $this->productoModel->cambiarImagen($idProducto,$img,$newImg);
+    header('Location: '.DETALLEADMIN.'/'.$idProducto);
+  }
 
   function crearProducto(){
        $nombreProducto = $_POST["nombreProducto"];

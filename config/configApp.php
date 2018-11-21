@@ -15,6 +15,7 @@ class ConfigApp{
     'marcasAdmin' => 'admController#marcas',
     'borrarProducto' => 'admController#borrarProducto',
     'borrarImagen' => 'admController#borrarImagen',
+    'cambiarImagen' => 'admController#cambiarImagen',
     'borrarMarca' => 'admController#borrarMarca',
     'crearProducto' => 'admController#crearProducto',
     'crearMarca' => 'admController#crearMarca',

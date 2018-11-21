@@ -50,6 +50,12 @@ class productoModel extends Model
     $sentencia = $this->db->prepare( "update producto set imagen = ? where id_producto=?");
     $sentencia->execute(array($img,$idProducto));
     }
+  function cambiarImagen($idProducto,$imagen,$newImg){
+    //unlink($imagen);// no anda y nose por que
+    $img = $this->subirImagen($newImg);
+    $sentencia = $this->db->prepare( "update producto set imagen = ? where id_producto=?");
+    $sentencia->execute(array($img,$idProducto));
+  }
 
 private function subirImagen($imagen){
     $destino_final = 'img/' . uniqid() . '.jpg';
