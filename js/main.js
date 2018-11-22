@@ -1,21 +1,28 @@
 'use strict'
 let templateComentarios;
-
+console.log("holaaaa");
 fetch('js/templates/detalleComentarios.handlebars')
-.then(response => response.text())
+.then(response => {
+  console.log("chau viejo");
+  return response.text()
+})
 .then(template => {
     templateComentarios = Handlebars.compile(template); // compila y prepara el template
-    //console.log(template);
+    console.log(templateComentarios);
     getComentarios();
 });
 
 function getComentarios(){
 
- fetch(api/comentarios)// en el configApi estaba como detalleProducto ahora puse comentario, creo q tienen q ser estas 2 lienas iguales,y nose si tienen
+ fetch("../api/comentarios?params=1")// en el configApi estaba como detalleProducto ahora puse comentario, creo q tienen q ser estas 2 lienas iguales,y nose si tienen
   //q ser iguales a la ya definida,osea, detalleProducto
- .then(response => response.json())
+ .then(response => {
+   console.log(response);
+   return response.text()
+ })
  .then(jsonComentarios =>{
-    mostrarComentarios(jsonComentarios);
+    //mostrarComentarios(jsonComentarios);
+    console.log(jsonComentarios);
   })
 }
 //jsonComentarios nose de donde sale, en el video es jsonTareas pero tampoco lo entiendo

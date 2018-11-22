@@ -68,7 +68,7 @@ class Smarty_Internal_Method_ClearCompiledTemplate
         $_count = 0;
         try {
             $_compileDirs = new RecursiveDirectoryIterator($_dir);
-            // NOTE: UnexpectedValueException thrown for PHP >= 5.3
+            // : UnexpectedValueException thrown for PHP >= 5.3
         } catch (Exception $e) {
             return 0;
         }

@@ -2,11 +2,14 @@
 
 
 require_once "config/ConfigApp.php";
-require_once "controller/usersController.php";
-require_once "controller/signinController.php";
-require_once "controller/sessionController.php";
 require_once "controller/admController.php";
 require_once 'controller/productoController.php';
+require_once "controller/sessionController.php";
+require_once "controller/signinController.php";
+require_once "controller/usersController.php";
+
+
+
 
 function parseURL($url)
 {
@@ -26,7 +29,7 @@ if(isset($_GET['action'])){
     $action = $urlData[ConfigApp::$ACTION]; //home
     if(array_key_exists($action,ConfigApp::$ACTIONS)){
         $params = $urlData[ConfigApp::$PARAMS];
-        $action = explode('#',ConfigApp::$ACTIONS[$action]); //Array[0] -> ProductosController [1] -> BorrarProducto
+        $action = explode('#',ConfigApp::$ACTIONS[$action]);
         $controller =  new $action[0]();
         $metodo = $action[1];
         if(isset($params) &&  $params != null){

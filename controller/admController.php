@@ -13,6 +13,7 @@ class admController extends sessionController
   {
     parent::__construct();
     $this->view = new admView();
+    $this->logueado = new usersView();
     $this->productoModel = new productoModel();
     $this->marcaModel = new marcaModel();
     $this->usuarioModel = new usersModel();
@@ -23,6 +24,12 @@ class admController extends sessionController
     $productos = $this->productoModel->GetProductos();
     $marcas = $this->marcaModel->GetMarcas();
     $this->view->Index($this->titulo,$productos,$marcas,$usuarios);
+  }
+  function indexLogueado(){
+    $usuarios = $this->usuarioModel->GetUsuarios();
+    $productos = $this->productoModel->GetProductos();
+    $marcas = $this->marcaModel->GetMarcas();
+    $this->logueado->indexLogueado($this->titulo,$productos,$marcas,$usuarios);
   }
   function borrarProducto($params) {
     $idProducto = $params[0];
@@ -55,14 +62,9 @@ class admController extends sessionController
        $precio = $_POST["precio"];
        $marca = $_POST["marca"];
        $img = $_FILES['adjunto']['tmp_name'];
-       //$imagen = $_FILES['adjunto']['type'] == "image/jpg" || $_FILES['adjunto']['type'] == "image/jpeg" || $_FILES['adjunto']['type'] == "image/png";
-      // if ($nombreProducto!="" && $descripcion!="" && $precio!="" && $marca!="" && $imagen!="") {
-         $this->productoModel->altaProducto($nombreProducto,$descripcion, $precio, $marca, $img);
+       $this->productoModel->altaProducto($nombreProducto,$descripcion, $precio, $marca, $img);
          header('Location: '.HOMEADMIN);
-    /*  }else{
-         echo "error";
-       }*/
-     }
+       }
 
   function crearMarca(){
     $nombreMarca = $_POST["nombreMarca"];
@@ -107,13 +109,9 @@ class admController extends sessionController
     $descripcion = $_POST["descripcionProducto"];
     $precio = $_POST["precio"];
     $marca = $_POST["marca"];
-    //$this->productoModel->editarProducto($nombreProducto,$descripcion, $precio, $marca, $_FILES['adjunto']['tmp_name']);
-    //if ($nombreProducto!="" && $descripcion!="" && $precio!="" && $marca!="" && $imagen!="" && $id_producto!="") {
     $this->productoModel->editarProducto($nombreProducto,$descripcion, $precio, $_FILES['adjunto']['tmp_name'],$id_producto,$marca);
       header('Location: '.HOMEADMIN);
-/*  }else{
-      echo "error";
-    }*/
+
   }
   function formEditarMarca(){
     $marcas = $this->marcaModel->GetMarcas();
@@ -136,6 +134,7 @@ class admController extends sessionController
     $producto = $this->productoModel->GetProducto($id_producto);
     $this->view->detalleProducto($this->titulo,$marcas,$producto);
   }
+
 }
 
 

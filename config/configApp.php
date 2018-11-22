@@ -7,11 +7,13 @@ class ConfigApp{
     'index' => 'productoController#index',
     'filtrar' => 'productoController#filtrarProductos',
     'mostrarMarcas' => 'productoController#mostrarMarcas',
+    'mostrarMarcasLogueado' => 'productoController#mostrarMarcasLogueado',
     'InsertUsuario' => 'usersController#InsertUsuario',
     'login'=> 'signinController#login',
     'verificarLogin' => 'signinController#verificarLogin',
     'logout' => 'signinController#logout',
     'indexAdmin' => 'admController#index',
+    'indexLogueado' => 'admController#indexLogueado',
     'marcasAdmin' => 'admController#marcas',
     'borrarProducto' => 'admController#borrarProducto',
     'borrarImagen' => 'admController#borrarImagen',
@@ -19,7 +21,7 @@ class ConfigApp{
     'borrarMarca' => 'admController#borrarMarca',
     'crearProducto' => 'admController#crearProducto',
     'crearMarca' => 'admController#crearMarca',
-    'formAltaProducto' => 'admController#formAltaProducto',
+    'administrar' => 'admController#formAltaProducto',
     'formEditarProducto' => 'admController#formEditarProducto',
     'editarProducto'=> 'admController#editarProducto',
     'detalleProductoAdmin'=>'admController#detalleProducto',
@@ -27,8 +29,9 @@ class ConfigApp{
     'formEditarMarca' => 'admController#formEditarMarca',
     'editarMarca' => 'admController#editarMarca',
     'filtrarAdmin' => 'admController#filtrarAdmin',
+    'filtrarLogueado' => 'productoController#filtrarProductosLogueado',
     'detalleProducto' => 'productoController#detalleProducto',
-
+    'detalleProductoLogueado' => 'productoController#detalleProductoLogueado',
   ];
 
 }

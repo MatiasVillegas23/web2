@@ -16,6 +16,11 @@
   </nav>
 </ul>
 
-{include file="footer.tpl"}
+<div class="row">
+    <div class="col-lg-offset-3 col-lg-6">
+<H1>ACA VA LA CAJA DE COMENTARIOS</H1>
+    </div>
+</div>
+</div>
 
-<!-- agregar aca el div para mostar comentarios -->
+{include file="footer.tpl"}

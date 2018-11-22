@@ -26,19 +26,7 @@ class admView
     $smarty = new Smarty();
     $smarty->assign('titulo',$titulo);
     $smarty->assign('marcas',$marcas);
-    $smarty->display('templates/Admin/altaProductos.tpl');
-  }
-  function formAltaMarca($titulo, $marcas){
-    $smarty = new Smarty();
-    $smarty->assign('titulo',$titulo);
-    $smarty->assign('marcas',$marcas);
-    $smarty->display('templates/Admin/altaMarcas.tpl');
-  }
-  function marcas($titulo, $marcas){
-    $smarty = new Smarty();
-    $smarty->assign('titulo',$titulo);
-    $smarty->assign('marcas',$marcas);
-    $smarty->display('templates/Admin/marcas.tpl');
+    $smarty->display('templates/Admin/administrar.tpl');
   }
   function formEditarProducto($titulo, $marcas, $productos){
     $smarty = new Smarty();
@@ -47,11 +35,23 @@ class admView
     $smarty->assign('productos',$productos);
     $smarty->display('templates/Admin/editarProducto.tpl');
   }
+  function formAltaMarca($titulo, $marcas){
+    $smarty = new Smarty();
+    $smarty->assign('titulo',$titulo);
+    $smarty->assign('marcas',$marcas);
+    $smarty->display('templates/Admin/altaMarcas.tpl');
+  }
   function formEditarMarca($titulo, $marcas){
     $smarty = new Smarty();
     $smarty->assign('titulo',$titulo);
     $smarty->assign('marcas',$marcas);
     $smarty->display('templates/Admin/editarMarca.tpl');
+  }
+  function marcas($titulo, $marcas){
+    $smarty = new Smarty();
+    $smarty->assign('titulo',$titulo);
+    $smarty->assign('marcas',$marcas);
+    $smarty->display('templates/Admin/marcas.tpl');
   }
   function detalleProducto($titulo, $marcas,$producto){
     $smarty = new Smarty();

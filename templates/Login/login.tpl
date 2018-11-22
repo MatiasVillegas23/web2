@@ -16,7 +16,6 @@
 
 
     </form>
-
     <h3>{$Message}</h3>
   </div>
 
@@ -34,7 +33,8 @@
 
       <button type="submit" class="btn btn-success">Registrarse</button>
 
-      <h3>{$Message2}</h3>
+
     </form>
+    <h3>{$Message2}</h3>
     </div>
 {include file="footer.tpl"}

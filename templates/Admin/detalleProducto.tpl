@@ -1,5 +1,5 @@
 {include file="../header.tpl"}
-{include file="./navAdminDetail.tpl"}
+{include file="./navAdmin.tpl"}
 {include file="fix.tpl"}
 {foreach from=$productos item=producto}
 <form method="post" enctype="multipart/form-data">

@@ -34,6 +34,12 @@ class usersModel
     return $sentencia->fetchAll(PDO::FETCH_ASSOC);
   }
 
+  function AdminCheck($isAdmin){
+    $sentencia = $this->db->prepare( "select * from usuario where isAdmin=? limit 1");
+    $sentencia->execute(array($isAdmin));
+    return $sentencia->fetchAll(PDO::FETCH_ASSOC);
+  }
+
 }
 
 

@@ -14,7 +14,7 @@ private $model;
   }
 
 function cargarComentarios($params = null){
-
+echo $params;
   if (isset($params)) {
     $id_producto = $params[0];
     $data = $this->model->getComentarios($id_producto);

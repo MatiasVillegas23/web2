@@ -12,6 +12,15 @@ class usersView
     //$smarty->debugging = true;
     $smarty->display('templates/MostrarUsuarios.tpl');
   }
-}
 
+  function indexLogueado($titulo,$productos,$marcas,$usuarios){
+    $smarty = new Smarty();
+    $smarty->assign('titulo',$titulo);
+    $smarty->assign('usuarios',$usuarios);
+    $smarty->assign('productos',$productos);
+    $smarty->assign('marcas',$marcas);
+    $smarty->assign('page','indexLogueado');
+    $smarty->display('templates/User/index.tpl');
+}
+}
  ?>

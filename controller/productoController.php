@@ -29,15 +29,38 @@ class productoController extends Controller
       header('Location: '.HOME);
     }
   }
+function filtrarProductosLogueado(){
+    if (isset($_POST['filtrarLogueado'])) {
+      $categoriaFiltrada = $_POST['filtrarLogueado'];
+      $productos = $this->model->GetProductos();
+      $marcas = $this->marcaModel->GetMarcas();
+      $this->view->FiltrarLogueado($this->titulo,$marcas,$productos,$categoriaFiltrada);
+    }else {
+      print_r("se cayo el sistema");
+      //header('Location: '.HOME);
+    }
+  }
   function mostrarMarcas(){
     $marcas = $this->marcaModel->GetMarcas();
     $this->view->mostrarMarcas($this->titulo,$marcas);
+  }
+
+  function mostrarMarcasLogueado(){
+    $marcas = $this->marcaModel->GetMarcas();
+    $this->view->mostrarMarcasLogueado($this->titulo,$marcas);
   }
   public function detalleProducto($params){
     $id_producto = $params[0];
     $producto =$this->model->GetProducto($id_producto);
     $marca=$this->marcaModel->GetMarca($producto);
     $this->view->detalleProducto($producto[0],$marca[0]);
+  }
+
+  public function detalleProductoLogueado($params){
+    $id_producto = $params[0];
+    $producto =$this->model->GetProducto($id_producto);
+    $marca=$this->marcaModel->GetMarca($producto);
+    $this->view->detalleProductoLogueado($producto[0],$marca[0]);
   }
 }
 ?>
