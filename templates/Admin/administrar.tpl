@@ -131,11 +131,51 @@
 
 </div>
 
+
+
+<!-- ADMINISTRAR USUARIOS -->
 <div class="row">
   <div class="col-lg-offset-3 col-lg-6">
-  <h1 class="text-center">ADMINISTRAR USUARIOS:</h1>
-</div>
+    <h1 class="text-center">ADMINISTRAR USUARIOS:</h1>
   </div>
+</div>
+<div class="row">
+  <div class="col-lg-offset-3 col-lg-6">
+    <form class="form-horizontal">
+<fieldset>
+
+<!-- Select Basic -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="UserListButton">SELECCIONAR USUARIO:</label>
+  <div class="col-md-6">
+    <select id="UserList" name="UserList" class="form-control">
+      {foreach from=$marcas item=marca}
+      <option value="{$marca['id_marca']}"> {$marca['nombre']} - test</option>
+      {/foreach}
+    </select>
+  </div>
+</div>
+
+<!-- Button (Double) -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="perms">PERMISOS DE ADMIN:</label>
+  <div class="col-md-8">
+    <button id="addAdmin" name="addAdmin" class="btn btn-success">OTORGAR</button>
+    <button id="delAdmin" name="delAdmin" class="btn btn-inverse">REMOVER</button>
+  </div>
+</div>
+
+<!-- Button -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="DeleteUser">ELIMINAR USUARIO:</label>
+  <div class="col-md-4">
+    <button id="delUser" name="delUser" class="btn btn-danger">ELIMINAR!!!</button>
+  </div>
+</div>
+
+</fieldset>
+</form>
+   </div>
 </div>
 
 

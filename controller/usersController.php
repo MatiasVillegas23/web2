@@ -30,10 +30,14 @@ class usersController extends sessionController
             $user    = $_POST["usuario"];
             $pass    = $_POST["pass"];
             $Usuario = $this->model->GetUser($user);
-            print_r("111111111111");
+            //header("Location: http://".$_SERVER["SERVER_NAME"] . dirname($_SERVER["PHP_SELF"]));
 
-            if (!empty($Usuario)) {
-                $this->message = "El usuario ya se encuentra registrado";
+            //print_r($Usuario);
+            //var_dump($Usuario);
+//(!empty($dbUser)&&(password_verify($pass, $dbUser[0]["pass"]))&&$dbUser[0]["isAdmin"] == '1')
+
+            if ($Usuario[0]["username"] != NULL) {
+                $this->Message2 = "El usuario ya se encuentra registrado";
                 $this->view->mostrarLogin($this->Message2);
                 print_r("22222222222");
             } else {
@@ -47,7 +51,7 @@ class usersController extends sessionController
                             header("Location: http://".$_SERVER["SERVER_NAME"] . dirname($_SERVER["PHP_SELF"]));
                             print_r("4444444444");
                             } else {
-                                $this->message = "Error, intente nuevamente";
+                                $this->Message2 = "Error, intente nuevamente";
                                   $this->view->mostrarLogin($this->Message2);
                                   print_r("555555555555");
                                   }
@@ -55,7 +59,7 @@ class usersController extends sessionController
                               }
                             }
                                   else {
-                                        $this->message = "Datos faltantes";
+                                        $this->Message2 = "Datos faltantes";
                                         $this->view->mostrarLogin($this->Message2);
                                         print_r("666666666666");
         }
