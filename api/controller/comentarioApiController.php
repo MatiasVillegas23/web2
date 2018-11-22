@@ -3,7 +3,7 @@
 require_once "Api.php";
 require_once "./../model/comentariosModel.php";
 
-class productoApiController extends Api{
+class comentarioApiController extends Api{
 
 private $model;
 
@@ -14,7 +14,8 @@ private $model;
   }
 
 function cargarComentarios($params = null){
-echo $params;
+  //echo("hola");
+  //echo $params;
   if (isset($params)) {
     $id_producto = $params[0];
     $data = $this->model->getComentarios($id_producto);
@@ -28,8 +29,12 @@ echo $params;
 
   function setComentario($params = null){
       if (count($params)==1) {
+        //  var_dump($params);
         $objetoJSON = $this->getJSONData();
-        $r = $this->model->setComentario($objetoJSON->id_producto, $objetoJSON->comentario, $objetoJSON->puntaje);
+        //var_dump($objetoJSON);
+        //var_dump($this->model);
+        $r = $this->model->setComentario($objetoJSON->id_producto, $objetoJSON->comentario, $objetoJSON->puntaje, $objetoJSON->userName);
+        var_dump($r);
         //la linea de arriba no anda Y NO SE POR QUE
         if($r == false){
           return $this->json_response($r,300);

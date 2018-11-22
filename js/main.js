@@ -1,32 +1,46 @@
 'use strict'
+let arr = window.location.pathname.split('/');
+let itemId = arr.slice(-1)[0];
 let templateComentarios;
-console.log("holaaaa");
-fetch('js/templates/detalleComentarios.handlebars')
+
+fetch('../js/templates/detalleComentarios.handlebars')
 .then(response => {
-  console.log("chau viejo");
+  //console.log("chau viejo");
   return response.text()
 })
 .then(template => {
     templateComentarios = Handlebars.compile(template); // compila y prepara el template
-    console.log(templateComentarios);
+    //console.log(templateComentarios);
     getComentarios();
 });
 
 function getComentarios(){
 
- fetch("../api/comentarios?params=1")// en el configApi estaba como detalleProducto ahora puse comentario, creo q tienen q ser estas 2 lienas iguales,y nose si tienen
+ fetch("../api/comentarios/"+itemId)// en el configApi estaba como detalleProducto ahora puse comentario, creo q tienen q ser estas 2 lienas iguales,y nose si tienen
   //q ser iguales a la ya definida,osea, detalleProducto
  .then(response => {
-   console.log(response);
+   //console.log(response);
    return response.text()
  })
  .then(jsonComentarios =>{
-    //mostrarComentarios(jsonComentarios);
-    console.log(jsonComentarios);
+    mostrarComentarios(jsonComentarios);
+    //console.log(jsonComentarios);
   })
 }
-//jsonComentarios nose de donde sale, en el video es jsonTareas pero tampoco lo entiendo
-//sale error de js en la consola del navegador
+function setComentarios(){
+
+fetch("../api/comentarios/", {
+      method: 'POST',
+      //body: JSON.stringify(comentario),
+      headers: {
+        'Content-Type': 'application/json'
+      }
+  }).then(res => {
+    //console.log(res)
+    return res.json();
+  })
+  .catch(error => console.error('Error:', error));
+}
 function mostrarComentarios(jsonComentarios) {
     let context = { // como el assign de smarty
         comentarios: jsonComentarios

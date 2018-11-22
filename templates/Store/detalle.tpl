@@ -16,6 +16,10 @@
   </nav>
 </ul>
 
+<div class="comentarios-container" id="comentarios-container">
+ <p>aca van los comentarios</p>
+</div>
+
 {include file="footer.tpl"}
 
 <!-- agregar aca el div para mostar comentarios -->

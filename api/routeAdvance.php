@@ -16,12 +16,15 @@ function parseURL($url)
 if(isset($_GET['resource'])){
 
     $urlData = parseURL($_GET['resource']);
+    //var_dump($urlData);
     $resource = $urlData[ConfigApi::$RESOURCE];
     if(array_key_exists($resource,ConfigApi::$RESOURCES)){
-        $params = $urlData[ConfigApi::$PARAMS];
-        $resource = explode('#',ConfigApi::$RESOURCES[$resource]);
+       $params = $urlData[ConfigApi::$PARAMS];
+       $resource = explode('#',ConfigApi::$RESOURCES[$resource]);
+        //var_dump($resource);
         $controller =  new $resource[0]();
         $metodo = $resource[1];
+        //echo("holis ".$params);
         if(isset($params) &&  $params != null){
             echo $controller->$metodo($params);
         }
