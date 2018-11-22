@@ -1,20 +1,13 @@
 <?php
+require_once 'Model.php';
 /**
 *
 */
-class usersModel
+class usersModel extends Model
 {
-  private $db;
-
   function __construct()
   {
-    $this->db = $this->Connect();
-  }
-
-  function Connect(){
-    return new PDO('mysql:host=localhost;'
-    .'dbname=hardware;charset=utf8'
-    , 'root', '');
+    parent::__construct();
   }
 
   function GetUsuarios(){
@@ -23,9 +16,9 @@ class usersModel
     return $sentencia->fetchAll(PDO::FETCH_ASSOC);
   }
 
-  function InsertarUsuario($user, $pass){
-  $sentencia = $this->db->prepare("INSERT INTO usuario(username, pass) VALUES(?,?)");
-  $sentencia->execute(array($user, $pass));
+  function InsertarUsuario($user, $pass, $isAdmin){
+  $sentencia = $this->db->prepare("INSERT INTO usuario(username, pass, isAdmin) VALUES(?,?,?)");
+  $sentencia->execute(array($user, $pass, $isAdmin));
   }
 
   function GetUser($user){

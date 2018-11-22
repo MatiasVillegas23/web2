@@ -2,11 +2,12 @@
 {include file="./navAdmin.tpl"}
 {include file="fix.tpl"}
 {foreach from=$productos item=producto}
-<form method="post" enctype="multipart/form-data">
+
   <div class="col-lg-10 col-lg-offset-1">
 
     <div class="row">
       <div class="col-lg-8">
+
         <a href="#" class="link"></a>
         <li class="list-group-item">{$producto['nombre']} - ${$producto['precio']}</li>
         <li class="list-group-item">{$producto['descripcion']}</li>
@@ -22,15 +23,17 @@
       <div class="row">
         <br>
         <div class="col-lg-offset-8 col-lg-4"> <label for="adjunto">Cambiar imagen:</label>
+          <form method="post" enctype="multipart/form-data">
           <input type="file" name="imagen" class="form-control-file" id="imagen" accept="image/x-png,image/jpeg">
         <br>
         <a href="../cambiarImagen/{$producto['imagen']}/{$producto['id_producto']}"><span class="glyphicon glyphicon-file" aria-hidden="true"></span>Cambiar Imagen</a>
           <!-- <button type="submit" class="btn btn-primary">Aceptar</button></div>-->
         </div>
+          </form>
       </div>
     </div>
   </div>
-</form>
+
     <div class="col-lg-8" id="comentarios-container">
 
     </div>

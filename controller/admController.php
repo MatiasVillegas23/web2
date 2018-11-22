@@ -122,8 +122,9 @@ class admController extends sessionController
     $id_marca = $_POST["id_marca"];
     $nombreMarca = $_POST["nombreMarca"];
     $descripcion = $_POST["descripcionMarca"];
+    $img = $_FILES['adjunto']['tmp_name'];
     if ($nombreMarca!="" && $descripcion!="" && $id_marca!="") {
-      $this->marcaModel->editarMarca($nombreMarca,$descripcion,$id_marca);
+      $this->marcaModel->editarMarca($nombreMarca,$descripcion,$id_marca,$img);
       header('Location: '.MARCASADMIN);
     }else{
       echo "error";
