@@ -69,8 +69,9 @@ class admController extends sessionController
   function crearMarca(){
     $nombreMarca = $_POST["nombreMarca"];
     $descripcion = $_POST["descripcionMarca"];
+    $img = $_FILES['adjunto']['tmp_name'];
     if ($nombreMarca!="" && $descripcion!="") {
-      $this->marcaModel->altaMarca($nombreMarca,$descripcion);
+      $this->marcaModel->altaMarca($nombreMarca,$descripcion, $img);
       header('Location: '.MARCASADMIN);
     }else{
       echo "error";

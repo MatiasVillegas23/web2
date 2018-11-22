@@ -3,9 +3,6 @@
     <li><a href="/web2/indexAdmin">HOME</a></li>
     <li><a href="/web2/marcasAdmin">MARCAS</a></li>
     <li><a href="/web2/administrar">ADMINISTRACION</a></li>
-    <li><a href="/web2/formEditarProducto">EDITAR ITEM</a></li>
-    <li><a href="/web2/formAltaMarca">CREAR MARCA</a></li>
-    <li><a href="/web2/formEditarMarca">EDITAR MARCA</a></li>
     <li><a href="/web2/logout">CERRAR SESION</a></li>
   </ul>
   <form class="col-md-2 col-lg-2 form-inline" action="filtrarAdmin" method="POST">

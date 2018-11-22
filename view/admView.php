@@ -33,7 +33,7 @@ class admView
     $smarty->assign('titulo',$titulo);
     $smarty->assign('marcas',$marcas);
     $smarty->assign('productos',$productos);
-    $smarty->display('templates/Admin/editarProducto.tpl');
+    $smarty->display('templates/Admin/administrar.tpl');
   }
   function formAltaMarca($titulo, $marcas){
     $smarty = new Smarty();
