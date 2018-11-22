@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <ul class="nav navbar-nav">
-    <li><a href="/web2/indexLogueado">PAGINA PRINCIPAL</a></li>
+    <li><a href="/web2/indexLogueado">HOME</a></li>
     <li><a href="/web2/mostrarMarcasLogueado">MARCAS</a></li>
     <li><a href="/web2/logout">CERRAR SESION</a></li>
 

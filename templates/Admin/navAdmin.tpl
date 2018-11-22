@@ -5,6 +5,7 @@
     <li><a href="/web2/administrar">ADMINISTRACION</a></li>
     <li><a href="/web2/logout">CERRAR SESION</a></li>
   </ul>
+  {if $page !== 'detalleProductoAdmin'}
   <form class="col-md-2 col-lg-2 form-inline" action="filtrarAdmin" method="POST">
     <select name="filtrarAdmin" class="form-control filter">
       <option value="" selected disabled hidden>Filtrar por marca</option>
@@ -14,4 +15,7 @@
     </select>
     <button class="btn btn-primary btn-sm" type="submit">Filtrar</button>
     </form>
+    {else}
+
+    {/if}
 </nav>
