@@ -89,7 +89,7 @@
 <div class="row">
         <div class="col-lg-5 bg-warning">
           <h1>CREAR MARCA:</h1>
-          <form method="post" action="crearMarca">
+          <form method="post" action="crearMarca" enctype="multipart/form-data">
             <div class="form-group">
               <label for="nombreMarca">Nombre</label>
               <input type="text" class="form-control" id="nombreMarca" name="nombreMarca">
@@ -107,7 +107,7 @@
 
         <div class="col-lg-offset-2 col-lg-5 bg-warning">
           <h1>EDITAR MARCA:</h1>
-          <form method="post" action="editarMarca">
+          <form method="post" action="editarMarca" enctype="multipart/form-data">
             <select name="id_marca" class="form-control filter">
               <option value="id_marca" selected disabled hidden>ELEGIR MARCA</option>
               {foreach from=$marcas item=marca}

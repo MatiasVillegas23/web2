@@ -23,17 +23,24 @@ class marcaModel extends Model
     return $sentencia->fetchAll(PDO::FETCH_ASSOC);
 
   }
-  function altaMarca($nombreMarca,$descripcion){
-    $sentencia = $this->db->prepare("INSERT INTO marca(nombre, descripcion) VALUES(?,?)");
-    $sentencia->execute(array($nombreMarca,$descripcion));
+  function altaMarca($nombreMarca,$descripcion,$img){
+    $pathImg = $this->subirImagen($img);
+    $sentencia = $this->db->prepare("INSERT INTO marca(nombre, descripcion, imagen) VALUES(?,?,?)");
+    $sentencia->execute(array($nombreMarca,$descripcion,$pathImg));
   }
   function borrarMarca($id_marca){
     $sentencia = $this->db->prepare( "delete from marca where id_marca=?");
     $sentencia->execute(array($id_marca));
   }
-  function editarMarca($nombre,$descripcion,$id_marca){
-    $sentencia = $this->db->prepare( "update marca set nombre = ?, descripcion = ? where id_marca=?");
-    $sentencia->execute(array($nombre,$descripcion,$id_marca));
+  function editarMarca($nombre,$descripcion,$id_marca,$imagen){
+    $pathImg = $this->subirImagen($imagen);
+    $sentencia = $this->db->prepare( "update marca set nombre = ?, descripcion = ?, imagen = ? where id_marca=?");
+    $sentencia->execute(array($nombre,$descripcion,$pathImg,$id_marca));
+  }
+  private function subirImagen($imagen){
+      $destino_final = 'img/' . uniqid() . '.jpg';
+      move_uploaded_file($imagen,$destino_final);
+      return $destino_final;
   }
 
 }
