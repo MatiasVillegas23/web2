@@ -35,7 +35,7 @@
   </div>
 
     <div class="col-lg-8" id="comentarios-container">
-      <p>aca van los comentarios</p>
+      <label><p>Cargando Comentarios.....</p></label>
     </div>
 {/foreach}
 {include file="footer.tpl"}

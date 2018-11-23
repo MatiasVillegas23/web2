@@ -1,11 +1,14 @@
-<!-- aca se debe mostrar el producto con sus comentarios -->
-<!-- ver codigo gitLab para ver sintaxis -->
 
  <ul class="list-group">
    <li>hola</li>
-  {{#each comentario}}
-
-      <li class="list-group-item">{{id_producto}} ----- {{comentario}} ----- {{puntaje}}</li>
-
+   <li>{{otro}}</li>
+  {{#each comentarios}}
+  <label>
+    <ul class="list-group">
+      <li class="list-group-item disabled">{{userName}}</li>
+      <li class="list-group-item">{{comentario}}</li>
+      <li class="list-group-item">Puntaje: {{puntaje}}</li>
+    </ul>
+  </label>
   {{/each}}
 </ul>
