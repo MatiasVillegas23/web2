@@ -160,8 +160,8 @@
 <div class="form-group">
   <label class="col-md-4 control-label" for="perms">PERMISOS DE ADMIN:</label>
   <div class="col-md-8">
-    <button id="addAdmin" name="addAdmin" class="btn btn-success">OTORGAR</button>
-    <button id="delAdmin" name="delAdmin" class="btn btn-inverse">REMOVER</button>
+    <button id="addAdmin" name="addAdmin" class="btn btn-success" value="1">OTORGAR</button>
+    <button id="delAdmin" name="delAdmin" class="btn btn-inverse" value="0">REMOVER</button>
   </div>
 </div>
 
@@ -169,7 +169,7 @@
 <div class="form-group">
   <label class="col-md-4 control-label" for="DeleteUser">ELIMINAR USUARIO:</label>
   <div class="col-md-4">
-    <button id="delUser" name="delUser" class="btn btn-danger">ELIMINAR!!!</button>
+    <button id="delUser" name="delUser" class="btn btn-danger" value="1">ELIMINAR!!!</button>
   </div>
 </div>
 
