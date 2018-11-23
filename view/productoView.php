@@ -11,6 +11,7 @@ class productoView
     $smarty->assign('marcas',$marcas);
     $smarty->assign('page','index');
     $smarty->display('templates/Store/index.tpl');
+
   }
   function productosFiltrados($titulo,$marcas,$productos,$categoriaFiltrada){
     $smarty = new Smarty();

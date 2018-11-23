@@ -21,6 +21,7 @@ class usersView
     $smarty->assign('marcas',$marcas);
     $smarty->assign('page','indexLogueado');
     $smarty->display('templates/User/index.tpl');
+    //$smarty->display('templates/Admin/administrar.tpl');
 }
 }
  ?>

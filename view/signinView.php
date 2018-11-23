@@ -10,13 +10,11 @@ class signinView
   }
 
 
-  function mostrarLogin($Message = '', $Message2 = ''){
+  function mostrarLogin($Message = ''){
 
     $this->Smarty->assign('titulo',"INGRESA CON TU CUENTA:"); // El 'Titulo' del assign puede ser cualquier valor
     $this->Smarty->assign('titulo2',"REGISTRATE EN LA PAGINA:");
     $this->Smarty->assign('Message',$Message); // El 'Titulo' del assign puede ser cualquier valor
-    $this->Smarty->assign('Message2',$Message2); // El 'Titulo' del assign puede ser cualquier valor
-
     $this->Smarty->display('templates/Login/login.tpl');
   }
 }
