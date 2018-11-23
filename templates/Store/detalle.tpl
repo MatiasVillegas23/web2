@@ -15,10 +15,11 @@
     <li class="list-group-item">{$producto['descripcion']}</li>
   </nav>
 </ul>
-<!-- 
+
 <div class="col-lg-8" id="comentarios-container">
   <label><p>Cargando Comentarios.....</p></label>
 </div>
+<!-- 
 <div class="col-lg-8">
   <form method="post" action="">
     <div class="form-group">
