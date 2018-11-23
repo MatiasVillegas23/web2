@@ -14,6 +14,7 @@ class admView
     $smarty->assign('marcas',$marcas);
     $smarty->assign('page','indexAdmin');
     $smarty->display('templates/Admin/index.tpl');
+    $smarty->display('templates/Admin/administrar.tpl');
   }
   function productosFiltrados($titulo,$marcas,$productos,$categoriaFiltrada){
     $smarty = new Smarty();

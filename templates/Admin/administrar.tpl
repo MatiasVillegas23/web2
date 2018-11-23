@@ -149,8 +149,8 @@
   <label class="col-md-4 control-label" for="UserListButton">SELECCIONAR USUARIO:</label>
   <div class="col-md-6">
     <select id="UserList" name="UserList" class="form-control">
-      {foreach from=$marcas item=marca}
-      <option value="{$marca['id_marca']}"> {$marca['nombre']} - test</option>
+      {foreach from=$usuarios item=usuario}
+      <option value="{$usuarios['id_usuario']}"> {$usuario['username']} - {$usuario['isAdmin']}</option>
       {/foreach}
     </select>
   </div>

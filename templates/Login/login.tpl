@@ -16,7 +16,6 @@
 
 
     </form>
-    <h3>{$Message}</h3>
   </div>
 
 <div class="col-md-5 col-lg-5 form-inline">
@@ -35,6 +34,11 @@
 
 
     </form>
-    <h3>{$Message2}</h3>
     </div>
+
+    <div class="container">
+    <div class="row">
+        <div class="col-lg-offset-1 col-lg-8"><h1>{$Message}</h1></div>
+    </div>
+</div>
 {include file="footer.tpl"}
