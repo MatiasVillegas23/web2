@@ -19,9 +19,9 @@
 <div class="col-lg-8" id="comentarios-container">
   <label><p>Cargando Comentarios.....</p></label>
 </div>
-<!-- 
+
 <div class="col-lg-8">
-  <form method="post" action="">
+  <form method="post" >
     <div class="form-group">
       <label for="exampleFormControlSelect1">Seleccione Puntaje</label>
       <select class="form-control" id="puntaje">
@@ -36,9 +36,9 @@
       <label for="exampleFormControlTextarea1">Comentario</label>
       <textarea class="form-control" id="comentario" rows="3"></textarea>
     </div>
-    <button type="button" class="enviar" id="{$producto['id_producto']}">Enviar</button>
+    <button type="button" class="enviar" >Enviar</button>
   </form>
-</div>-->
+</div>
 
 {include file="footer.tpl"}
 

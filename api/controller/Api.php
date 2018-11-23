@@ -32,7 +32,7 @@ abstract class Api{
    }
 
    function getJSONData(){
-     var_dump($this->data);
+     //var_dump($this->data);
      return json_decode($this->data);
    }
 

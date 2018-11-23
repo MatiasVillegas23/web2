@@ -34,12 +34,13 @@ function cargarComentarios($params = null){
         //var_dump($objetoJSON);
         //var_dump($this->model);
         $r = $this->model->setComentario($objetoJSON->id_producto, $objetoJSON->comentario, $objetoJSON->puntaje, $objetoJSON->userName);
-        var_dump($r);
+        //var_dump($r);
         //la linea de arriba no anda Y NO SE POR QUE
         if($r == false){
           return $this->json_response($r,300);
         }
-        return $this->json_response($r,200);
+        $response = json_encode($objetoJSON);
+        return $this->json_response($objetoJSON,200);
         //cargarComentarios();
       }else {
         return $this->json_response("No task created",300);

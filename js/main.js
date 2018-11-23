@@ -20,15 +20,22 @@ function getComentarios(){
    return response.text()
  })
  .then(jsonComentarios =>{
+   //console.log(jsonComentarios);
     mostrarComentarios(jsonComentarios);
     //console.log(jsonComentarios);
   })
 }
-function setComentarios(){
-
+function setComentarios(puntaje,comentario){
+let obj = {
+  puntaje:puntaje,
+  comentario:comentario,
+  id_producto:itemId,
+  userName:"anon"
+};
+//console.log(obj);
 fetch("../api/comentarios/", {
       method: 'POST',
-      //body: JSON.stringify(obj),
+      body: JSON.stringify(obj),
       headers: {
         'Content-Type': 'application/json'
       }
@@ -36,6 +43,7 @@ fetch("../api/comentarios/", {
     //console.log(res)
     return res.json();
   })
+  //.then(data => console.log(data))
   .catch(error => console.error('Error:', error));
 }
 function mostrarComentarios(jsonComentarios) {
@@ -43,11 +51,14 @@ function mostrarComentarios(jsonComentarios) {
         comentarios: jsonComentarios,
         otro: "template"
     }
-    console.log(jsonComentarios);
+    //console.log(jsonComentarios);
     let html = templateComentarios(context);
     document.querySelector("#comentarios-container").innerHTML = html;
+    //document.querySelector("#comentarios-container").html(big_template({context:context})) = html;
 }
-/*
+
 $(".enviar").on("click",function(){
-    setComentarios();
-})*/
+   let puntaje = $("#puntaje")[0].value;
+   let comentarios = $("#comentario")[0].value;
+    setComentarios(puntaje,comentarios);
+})

@@ -18,13 +18,13 @@ function getComentarios($id_producto){
 }
 
 function setComentario($id_producto,$comentario, $puntaje, $username){
-  echo($id_producto);
+  //echo($id_producto);
   $sentencia = $this->db->prepare("INSERT INTO comentario(id_producto, comentario, puntaje, userName) VALUES(?,?,?,?)");
   $sentencia->execute(array($id_producto,$comentario, $puntaje, $username));
-  //$lastId = $this->db->lastInsertId();
-  //$sentencia = $this->db->prepare( "select * from comentario where id_producto=?");
-  //$sentencia->execute(array($lastId));
-  return true;
+  $lastId = $this->db->lastInsertId();
+  $sentencia = $this->db->prepare( "select * from comentario where id_producto=?");
+  return $sentencia->execute(array($lastId));
+  //return true;
 }
 
 }
