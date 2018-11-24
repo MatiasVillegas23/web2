@@ -17,7 +17,7 @@ function getComentarios(){
  fetch("../api/comentarios/"+itemId)// en el configApi estaba como detalleProducto ahora puse comentario, creo q tienen q ser estas 2 lienas iguales,y nose si tienen
   //q ser iguales a la ya definida,osea, detalleProducto
  .then(response => {;
-   return response.text()
+   return response.json()
  })
  .then(jsonComentarios =>{
    //console.log(jsonComentarios);

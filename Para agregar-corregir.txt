@@ -1,0 +1,10 @@
+corregir
+ - al eliminar imagen de producto, q se elimine de la carpeta del servidor
+ - al agregar img a un producto q se agregue a la carpeta del servidor
+ - mejorar interfaz comentarios
+ 
+agregar
+ - asignar admin/ borrar usuario no agregado(solo interfaz creada)
+ - al borrar producto, borrar sus comentarios
+ - al crear comentario q se recarguen para mostarlo
+ - eliminar comentario siendo admin(hacerlo con js/ajax/fetch o jquery)

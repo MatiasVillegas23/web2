@@ -1,7 +1,7 @@
 <?php
 
 
-require_once "config/ConfigApi.php";
+require_once "config/configApi.php";
 require_once "controller/comentarioApiController.php";
 
 
